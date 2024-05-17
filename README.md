@@ -25,7 +25,7 @@ This code requires R version 4.3.2 (2023-10-31, nickname: Eye Holes), the R Proj
 1. Clone the repository. To learn about what this means, and how to use Git, see the [Git guide](https://nhsdigital.github.io/rap-community-of-practice/training_resources/git/using-git-collaboratively/).
 
 ```
-git clone https://github.com/NHSDigital/RAP_example_pipeline_r
+git clone https://github.com/nhsengland/RAP_example_pipeline_r.git
 ```
 
 2. Make sure you have renv installed. From the R console:
