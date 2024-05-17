@@ -94,10 +94,6 @@ In the highest level of this repository (known as the 'root'), the key file is: 
 
 This directory contains the meaty parts of the code. By organising the code into logical sections, we make it easier to understand, maintain and test. Moreover, tucking the complex code out of the way means that users don't need to understand everything about the code all at once.
 
-### `tests`
-
-This folder contains the tests for the code base. It's good practice to have unit tests for your functions at the very least, ideally in addition to tests of the pipeline as a whole such as backtests.
-
 ## Process Map
 
 If you have one, it can be useful to include a visual representation of your process. You can make flow charts with tools like Mural, Whiteboard, draw.io, etc. The one below was made using the mermaid markdown feature, which enables you to make flowcharts with code:
