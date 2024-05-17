@@ -42,7 +42,7 @@ download_file_if_not_exists <- function(url, destination) {
 }
 
 download_file_if_not_exists(
-  "https://s3.eu-west-2.amazonaws.com/files.digital.nhs.uk/assets/Services/Artificial+data/Artificial+HES+final/artificial_hes_ae_202302_v1_sample.zip", 
+  "https://files.digital.nhs.uk/assets/Services/Artificial%20data/Artificial%20HES%20final/artificial_hes_ae_202302_v1_sample.zip", 
   "./artificial_hes_ae_202302_v1_sample.zip"
 )
 
