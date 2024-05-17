@@ -1,6 +1,15 @@
 library(dplyr)
 
 get_distinct_count_of_col <- function(df_input, col_name) {
+  #' @title function get_distinct_count_of_col
+  #' 
+  #' @description Returns the distint count of a single column
+  #' in a dataframe.
+  #' 
+  #' @param df_input dataframe: The dataframe containing the column you want to count
+  #' @param col_name string: The name of the column you want to count
+  #' 
+  #' @section Returns: dataframe: df with one column and one row containing the distinct count 
 
   df_output <- df_hes %>% summarise(
     {{col_name}} := n_distinct(df_input[[col_name]])
@@ -11,16 +20,25 @@ get_distinct_count_of_col <- function(df_input, col_name) {
 }
 
 download_file_if_not_exists <- function(url, destination) {
+    #' @title function download_file_if_not_exists
+    #' 
+    #' @description Downloads a file from a specified URL to a
+    #' specified local path. Checks if the file already exists
+    #' and does not download if so.
+    #' 
+    #' @param url The URL of the file to be downloaded.
+    #' Must include the file name e.g. http://example.com/data.csv
+    #' @param destination The local path and file name where the
+    #' file will be downloaded to e.g., data_in/data.csv
+    #' 
+    #' @section Returns: Nothing
+    
+    if (file.exists(destination)) {
+      print("File already exists.")
+      return() 
+    }
 
-  if (!file.exists(destination)) {
-    download.file(
-      url, 
-      destination
-    )    
-  } else {
-    print("File already exists.")
-  }
-
+    download.file(url, destination)   
 }
 
 download_file_if_not_exists(
