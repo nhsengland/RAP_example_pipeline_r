@@ -4,9 +4,6 @@ library(docstring)
 source("src/data_ingestion/import_data.r")
 source("src/data_processing/aggregations.r")
 
-
-source()
-
 download_file_if_not_exists(
   "https://files.digital.nhs.uk/assets/Services/Artificial%20data/Artificial%20HES%20final/artificial_hes_ae_202302_v1_sample.zip", 
   "./artificial_hes_ae_202302_v1_sample.zip"
