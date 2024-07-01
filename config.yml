@@ -5,3 +5,4 @@ default:
     downloaded_hes_folder: "data_in/artificial_hes_ae_202302_v1_sample/"
     downloaded_hes_file: "artificial_hes_ae_2122.csv"
     output_path: "data_out/"
+    output_file_name: "hes_england_episode_count.csv"

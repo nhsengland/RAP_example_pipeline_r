@@ -25,7 +25,7 @@ df_hes_england_episode_count = get_distinct_count_of_col(df_hes, "EPIKEY")
 
 write.csv(
   df_hes_england_episode_count,
-  file = paste(config$output_path, "hes_england_episode_count.csv"),
+  file = paste(config$output_path, config$output_file_name),
   row.names = FALSE,
   quote = FALSE
 )
