@@ -1,28 +1,31 @@
 library(dplyr)
 library(docstring)
+library(config)
 
 source("src/data_ingestion/import_data.r")
 source("src/data_processing/aggregations.r")
 
+config <- config::get()
+
 download_file_if_not_exists(
-  "https://files.digital.nhs.uk/assets/Services/Artificial%20data/Artificial%20HES%20final/artificial_hes_ae_202302_v1_sample.zip", 
-  "./data_in/artificial_hes_ae_202302_v1_sample.zip"
+  paste0(config$hes_data_url, config$hes_data_file_name), 
+  paste0(config$download_destination, config$hes_data_file_name)
 )
 
 unzip(
-  "./data_in/artificial_hes_ae_202302_v1_sample.zip",
-  exdir="./data_in/"
+  paste0(config$download_destination, config$hes_data_file_name),
+  exdir = config$download_destination
 )
 
 df_hes <- read.csv(
-  "./data_in/artificial_hes_ae_202302_v1_sample/artificial_hes_ae_2122.csv"
+  paste0(config$downloaded_hes_folder, config$downloaded_hes_file)
 )
 
 df_hes_england_episode_count = get_distinct_count_of_col(df_hes, "EPIKEY")
 
 write.csv(
   df_hes_england_episode_count,
-  file = "./data_out/hes_england_episode_count.csv",
+  file = paste(config$output_path, config$output_file_name),
   row.names = FALSE,
   quote = FALSE
 )
