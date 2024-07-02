@@ -3,7 +3,7 @@ library(dplyr)
 setwd("../../")
 source("src/data_processing/aggregations.r")
 
-test_that("aggregation works", {
+test_that("get_distinct_count_of_col works", {
     
     df_test_data <- data.frame(
         test_column = c("A", "B", "C", "D", "D")
