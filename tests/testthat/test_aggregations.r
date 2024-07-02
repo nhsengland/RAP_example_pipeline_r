@@ -1,4 +1,5 @@
 library(dplyr)
+library(testthat)
 
 setwd("../../")
 source("src/data_processing/aggregations.r")
