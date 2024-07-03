@@ -9,7 +9,7 @@ get_distinct_count_of_col <- function(df_input, col_name) {
   #' 
   #' @section Returns: dataframe: df with one column and one row containing the distinct count 
 
-  df_output <- df_hes %>% summarise(
+  df_output <- df_input %>% summarise(
     {{col_name}} := n_distinct(df_input[[col_name]])
   )
 
