@@ -7,7 +7,7 @@ source("src/data_processing/aggregations.r")
 test_that("get_distinct_count_of_col works", {
     
     df_test_data <- data.frame(
-        test_column = c("A", "B", "C", "D", "D")
+        test_column = c("A", "B", "C", "D", "D", NULL)
     )
 
     df_expected <- data.frame(
