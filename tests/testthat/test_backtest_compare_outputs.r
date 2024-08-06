@@ -8,8 +8,8 @@ config <- config::get()
 
 for (backtest in backtest_params$files_to_compare) {
 
-    actual_path = paste(bt_params$output_base_path, backtest$output_file, sep="")
-    expected_path = paste(bt_params$ground_truth_base_path, backtest$ground_truth_file, sep="")
+    actual_path = paste(backtest_params$output_base_path, backtest$output_file, sep="")
+    expected_path = paste(backtest_params$ground_truth_base_path, backtest$ground_truth_file, sep="")
     test_name = paste(backtest$test_name, "matches ground truth")
 
     if(!file.exists(actual_path)) {
