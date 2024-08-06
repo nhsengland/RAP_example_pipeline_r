@@ -84,6 +84,16 @@ To run the pipeline, run the create_report.r file, either by running that file i
 |   | 
 |   +---utils                         <- utility functions not captured by the folder above
 |   |       .gitkeep                  <- This is a placeholder file that enables the otherwise empty directory to be committed
+|   |
++---tests                             <- Scripts with functions for use in 'create_publication.r'. Contains the project's codebase
+|   |
+|   +---tests/testthat                <- Tests used by the testthat package go in here
+|   |   |
+|   |   +---backtests
+|   |   |       backtest_params.r     <- Parameters required for the backtests    
+|   |   |   |
+|   |   |   +---ground_truth          <- Contains the correct outputs we expect the pipeline to produce.
+
 ```
 
 ### `root`
@@ -93,6 +103,14 @@ In the highest level of this repository (known as the 'root'), the key file is: 
 ### `src`
 
 This directory contains the meaty parts of the code. By organising the code into logical sections, we make it easier to understand, maintain and test. Moreover, tucking the complex code out of the way means that users don't need to understand everything about the code all at once.
+
+### `tests`
+
+This folder contains the unit tests and back tests for the pipeline. 
+
+Unit tests are test for the individual functions in our process, ensuring that they work in isolation. 
+
+Back tests are a form of integration test in that they test the whole process to ensure it produces some expected result for a given set of input parameters. In a RAP project where you are translating an existing process in another system (e.g. SAS, Excel, SQL, etc.) into R, this will usually mean comparing the output of your current, and presumably correct process, against your new R process, to ensure you are getting the right results.
 
 ## Process Map
 
