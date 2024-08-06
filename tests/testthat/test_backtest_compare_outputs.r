@@ -15,6 +15,8 @@ for (backtest in backtest_params$files_to_compare) {
     if(!file.exists(actual_path)) {
         print('output file does not exist... running pipeline')
         pipeline(config)
+    } else {
+        print("output file already exists")
     }
 
     df_actual <- read.csv(actual_path)

@@ -8,7 +8,9 @@ source("src/data_processing/aggregations.r")
 config <- config::get()
 
 pipeline <- function(config){
-
+  
+  print("running pipeline...")
+  
   download_file_if_not_exists(
     paste0(config$hes_data_url, config$hes_data_file_name), 
     paste0(config$download_destination, config$hes_data_file_name)
@@ -31,7 +33,9 @@ pipeline <- function(config){
     row.names = FALSE,
     quote = FALSE
   )
-
 }
 
-pipeline(config <- config::get())
+if (sys.nframe() == 0) {
+  pipeline(config <- config::get())
+}
+  
